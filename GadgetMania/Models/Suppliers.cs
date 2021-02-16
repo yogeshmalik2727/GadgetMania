@@ -13,7 +13,7 @@ namespace GadgetMania.Models
     {
         [Key]
         public int SupplierID { get; set; }
-
+                                                                                    //Supplier Name
         [Required]
         [StringLength(100)]
         public string SupplierName { get; set; }
@@ -22,8 +22,9 @@ namespace GadgetMania.Models
         public string ContactPerson { get; set; }
 
         public virtual ICollection<Products> SuppliersProducts { get; set; }
-
+                                                                                                        
         [NotMapped]
+        //File Upload
         public SingleFileUpload File { get; set; }
 
     }

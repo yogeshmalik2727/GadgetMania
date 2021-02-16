@@ -9,14 +9,14 @@ namespace GadgetMania.Models
     public class SupplierReview
     {
         [Key]
-        public int ReviewID { get; set; }
+        public int ReviewID { get; set; }          //Review Of Supplier
 
         [Required]
         [StringLength(100)]
         public string Name { get; set; }
 
         [Required]
-        public int Rating { get; set; }
+        public int Rating { get; set; }                                 //Rating of supplier
 
         [Required]
         [StringLength(1000)]
