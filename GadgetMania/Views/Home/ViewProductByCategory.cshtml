@@ -1,0 +1,33 @@
+﻿@model IEnumerable<GadgetMania.Models.Products>
+
+@{
+    ViewData["Title"] = "View Product By Category";
+}
+
+<h1>View Products</h1>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+
+        <div class="col-md-4">
+            <div class="card h-100 border-primary">
+                <img src="~/product_images/@item.ProductID@item.Extension" alt="" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <p>@Html.DisplayFor(modelItem => item.ProductName)</p>
+
+                    </h4>
+                    <h5>Price  :$ @Html.DisplayFor(modelItem => item.Price)</h5>
+                    <p class="card-text">@Html.DisplayFor(modelItem => item.ProductDescription)</p>
+                </div>
+                <div class="card-footer">
+                    <p>
+                       <a class="btn btn-primary" asp-action="ViewSupplire" asp-route-id="@item.SupplierID">View Supplier</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
